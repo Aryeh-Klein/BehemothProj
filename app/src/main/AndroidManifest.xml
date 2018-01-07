@@ -21,8 +21,9 @@
         <activity android:name=".SecondActivity" />
         <activity
             android:name=".SeferPage"
-            android:label="@string/title_activity_sefer_page"/>
-            <!--android:theme="@style/AppTheme.NoActionBar" />-->
+            android:label="@string/title_activity_sefer_page" />
+        <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
+        <activity android:name=".SeferPerakim"></activity>
     </application>
 
 </manifest>
