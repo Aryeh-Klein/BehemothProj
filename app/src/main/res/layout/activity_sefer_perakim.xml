@@ -15,14 +15,16 @@
     android:layout_height="match_parent"
     tools:context="org.kinneret.behemoth.SeferPerakim"
     android:orientation="vertical">
+
         <ScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:id="@+id/PerakimList"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:id="@+id/PerakimList">
+                    android:orientation="vertical">
                         <!-- Content here -->
                 </LinearLayout>
         </ScrollView>
