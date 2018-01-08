@@ -1,6 +1,7 @@
 package org.kinneret.behemoth;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -46,6 +47,7 @@ public class SeferPage extends AppCompatActivity {
         buttonBereshit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
+                buttonBereshit.setBackgroundColor(Color.GREEN);
                 OpenSefer(v, "Bereishit");
 
             }
@@ -55,6 +57,7 @@ public class SeferPage extends AppCompatActivity {
         buttonShmot.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
+                buttonShmot.setBackgroundColor(Color.GREEN);
                 OpenSefer(v, "Shmot");
 
             }
@@ -64,6 +67,7 @@ public class SeferPage extends AppCompatActivity {
         buttonVayikrah.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
+                buttonVayikrah.setBackgroundColor(Color.GREEN);
                 OpenSefer(v, "Vayikrah");
 
             }
@@ -73,6 +77,7 @@ public class SeferPage extends AppCompatActivity {
         buttonBamidbar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
+                buttonBamidbar.setBackgroundColor(Color.GREEN);
                 OpenSefer(v, "Bamidbar");
 
             }
@@ -82,6 +87,7 @@ public class SeferPage extends AppCompatActivity {
         buttonDivarim.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
+                buttonDivarim.setBackgroundColor(Color.GREEN);
                 OpenSefer(v, "Divarim");
 
             }
@@ -95,6 +101,27 @@ public class SeferPage extends AppCompatActivity {
         Intent intent = new Intent(this, SeferPerakim.class);
         intent.putExtra("Sefer",sefer);
         startActivity(intent);
+
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+
+        final Button button1 = (Button) findViewById(R.id.Bereshit);
+        button1.setBackgroundColor(Color.TRANSPARENT);
+
+        final Button button2 = (Button) findViewById(R.id.Shmot);
+        button2.setBackgroundColor(Color.TRANSPARENT);
+
+        final Button button3 = (Button) findViewById(R.id.Vayikrah);
+        button3.setBackgroundColor(Color.TRANSPARENT);
+
+        final Button button4 = (Button) findViewById(R.id.Bamidbar);
+        button4.setBackgroundColor(Color.TRANSPARENT);
+
+        final Button button5 = (Button) findViewById(R.id.Divarim);
+        button5.setBackgroundColor(Color.TRANSPARENT);
 
     }
 

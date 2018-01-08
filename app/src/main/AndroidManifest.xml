@@ -23,7 +23,10 @@
             android:name=".SeferPage"
             android:label="@string/title_activity_sefer_page" />
         <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
-        <activity android:name=".SeferPerakim"></activity>
+        <activity
+            android:name=".SeferPerakim"
+            android:label="@string/title_activity_perakim_oage">
+        </activity>
     </application>
 
 </manifest>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.kinneret.behemoth.SeferPage">
+    tools:context="org.kinneret.behemoth.SeferPage"
+    android:background="@drawable/behmoth">
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -39,32 +40,69 @@
             <Button
                 android:id="@+id/Bereshit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Bereishit" />
+                android:layout_height="@dimen/button_height"
+                android:background="@android:color/transparent"
+                android:elevation="1dp"
+                android:text="@string/Bereishit"
+                android:textAlignment="viewEnd"
+                android:layout_gravity="end"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_blue_bright"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+            <!--android:layout_height="wrap_content"-->
 
             <Button
                 android:id="@+id/Shmot"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Shemot" />
+                android:layout_height="@dimen/button_height"
+                android:text="@string/Shemot"
+                android:textAlignment="viewEnd"
+                android:layout_gravity="end"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_blue_bright"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"/>
 
             <Button
                 android:id="@+id/Vayikrah"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Vayikrah" />
+                android:layout_height="@dimen/button_height"
+                android:text="@string/Vayikrah"
+                android:textAlignment="viewEnd"
+                android:layout_gravity="end"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_blue_bright"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"/>
 
             <Button
                 android:id="@+id/Bamidbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Bamidbar" />
+                android:layout_height="@dimen/button_height"
+                android:text="@string/Bamidbar"
+                android:textAlignment="viewEnd"
+                android:layout_gravity="end"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_blue_bright"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"/>
 
             <Button
                 android:id="@+id/Divarim"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Divarim" />
+                android:layout_height="@dimen/button_height"
+                android:text="@string/Divarim"
+                android:textAlignment="viewEnd"
+                android:layout_gravity="end"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_blue_bright"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

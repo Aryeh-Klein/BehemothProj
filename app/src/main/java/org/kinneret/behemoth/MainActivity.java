@@ -1,14 +1,17 @@
 package org.kinneret.behemoth;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -47,9 +50,28 @@ public class MainActivity extends AppCompatActivity {
 
 
         final Button button = (Button) findViewById(R.id.Tanach);
+
+        /*button.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    Toast.makeText(MainActivity.this,"Pressed",Toast.LENGTH_SHORT).show();
+                }
+                else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    Toast.makeText(MainActivity.this,"Rleased",Toast.LENGTH_SHORT).show();
+                }
+
+                return true;
+            }
+
+
+        });*/
+
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
+                button.setBackgroundColor(Color.GREEN);
                 OpenSeferScreen(v);
 
             }
@@ -61,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
     public void OpenSeferScreen(View view){
         Intent intent = new Intent(this, SeferPage.class);
         startActivity(intent);
+
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        final Button button = (Button) findViewById(R.id.Tanach);
+        button.setBackgroundColor(Color.TRANSPARENT);
 
     }
 
