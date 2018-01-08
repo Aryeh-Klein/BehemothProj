@@ -1,6 +1,10 @@
 package org.kinneret.behemoth;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +23,7 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
+    private TextView mInstructions;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -44,11 +50,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        View view = getWindow().getDecorView();
+        int orientation = getResources().getConfiguration().orientation;
+        if (Configuration.ORIENTATION_LANDSCAPE == orientation) {
+            view.setBackgroundResource (R.drawable.behmothmobile);
+        } else {
+            view.setBackgroundResource (R.drawable.behmoth);
+        }
+
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-
+        mInstructions = (TextView) findViewById(R.id.Instructions);
+        runBlink();
         final Button button = (Button) findViewById(R.id.Tanach);
 
         /*button.setOnTouchListener(new View.OnTouchListener() {
@@ -80,10 +95,19 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void OpenSeferScreen(View view){
+    private void OpenSeferScreen(View view){
         Intent intent = new Intent(this, SeferPage.class);
         startActivity(intent);
 
+    }
+
+    private void runBlink(){
+        ObjectAnimator anim = ObjectAnimator.ofInt(mInstructions,"textColor", Color.TRANSPARENT, Color.RED, Color.TRANSPARENT);
+        anim.setDuration(3500);
+        anim.setEvaluator(new ArgbEvaluator());
+        anim.setRepeatMode(ValueAnimator.REVERSE);
+        anim.setRepeatCount(5);
+        anim.start();
     }
 
     @Override
