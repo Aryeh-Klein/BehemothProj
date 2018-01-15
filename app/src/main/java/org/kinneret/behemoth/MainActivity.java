@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
-                OpenSeferScreen(v);
+                OpenBooksScreen(v);
 
             }
         });
@@ -63,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
 
+    }
+
+    public void OpenBooksScreen(View view){
+        Intent intent = new Intent(this, books_activity.class);
+        startActivity(intent);
     }
 
 

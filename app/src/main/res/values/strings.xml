@@ -8,11 +8,18 @@
     <string name="Shemot">שמות</string>
     <string name="Vayikrah">ויקרא</string>
     <string name="Bamidbar">במדבר</string>
-    <string name="Stuff">במדבר</string>
+    <string name="Torah">תורה</string>
+    <string name="Neviim">נביאים</string>
+    <string name="Ketuvim">כתובים</string>
+    <string name="Yehoshua">יהושע</string>
+    <string name="Shoftim">שופטים</string>
+    <string name="Shmuel1">שמואל א</string>
+    <string name="Shmuel2">שמואל ב</string>
+
 
     <string name="Divarim">דברים</string>
-    <string name ="Hi">Hello</string>
-    <string name="title_activity_sefer_page">SeferPage</string>
+    <string name="Hi">Hello</string>
+    <string name="title_activity_sefer_page">תורה</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -103,4 +110,5 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_navi">NaviActivity</string>
 </resources>
