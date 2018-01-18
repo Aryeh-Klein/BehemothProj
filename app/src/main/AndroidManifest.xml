@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.kinneret.behemoth">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,7 +27,9 @@
         <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
         <activity
             android:name=".SeferPerakim"
-            android:label="@string/title_activity_perakim_oage">
+            android:label="@string/title_activity_perakim_page"></activity>
+        <activity android:name=".PesukimPage">
+            android:label="@string/title_activity_pesukim_page">
         </activity>
     </application>
 

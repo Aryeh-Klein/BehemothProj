@@ -44,13 +44,13 @@ public class SeferPerakim extends AppCompatActivity {
                 perakim = 34;
         }
 
-        createLayoutDynamically(perakim);
+        createLayoutDynamically(sefer, perakim);
 
 
     }
 
 
-    private void createLayoutDynamically(Integer n) {
+    private void createLayoutDynamically(final String s, final Integer n) {
 
 
         //Toast.makeText(SeferPerakim.this, converted, Toast.LENGTH_LONG).show();
@@ -68,12 +68,21 @@ public class SeferPerakim extends AppCompatActivity {
 
             myButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    Toast.makeText(SeferPerakim.this, "Button clicked index = " + id_, Toast.LENGTH_SHORT).show();
+
+                    getPesukim(s,n);
 
                 }
             });
         }
 
+
+    }
+
+    private void getPesukim(String sefer, int id){
+        Intent intent  = new Intent(this, PesukimPage.class);
+        intent.putExtra("Sefer",sefer);
+        intent.putExtra("Perek", id);
+        startActivity(intent);
 
     }
 
@@ -87,9 +96,18 @@ public class SeferPerakim extends AppCompatActivity {
             char1 = (char) (1487 + n);
         }
         else if(n >= 10 && n < 20){
-            char1 = (char) 1497;
-            char2 = (char) (1487 + chardig2);
-
+            if(n == 15){
+                char1 = (char) 1496;
+                char2 = (char) (1488 + chardig2);
+            }
+            else if(n == 16){
+                char1 = (char) 1496;
+                char2 = (char) (1488 + chardig2);
+            }
+            else{
+                char1 = (char) 1497;
+                char2 = (char) (1487 + chardig2);
+            }
         }
         else if(n >= 20 && n < 30){
             char1 = (char) 1499;
