@@ -21,6 +21,7 @@ public class SeferPerakim extends AppCompatActivity {
         Intent intent = getIntent();
 
         String sefer = intent.getStringExtra("Sefer");
+        Integer number = intent.getIntExtra("Number",0);
         Integer perakim = 0;
         switch (sefer) {
             case "Bereishit":
@@ -44,13 +45,13 @@ public class SeferPerakim extends AppCompatActivity {
                 perakim = 34;
         }
 
-        createLayoutDynamically(sefer, perakim);
+        createLayoutDynamically(sefer, perakim, number);
 
 
     }
 
 
-    private void createLayoutDynamically(final String s, final Integer n) {
+    private void createLayoutDynamically(final String s, final Integer n, final Integer number) {
 
 
         //Toast.makeText(SeferPerakim.this, converted, Toast.LENGTH_LONG).show();
@@ -69,7 +70,7 @@ public class SeferPerakim extends AppCompatActivity {
             myButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
 
-                    getPesukim(s,id);
+                    getPesukim(s, id, number);
 
                 }
             });
@@ -78,10 +79,11 @@ public class SeferPerakim extends AppCompatActivity {
 
     }
 
-    private void getPesukim(String sefer, int id){
+    private void getPesukim(String sefer, int id, Integer num){
         Intent intent  = new Intent(this, PesukimPage.class);
         intent.putExtra("Sefer",sefer);
         intent.putExtra("Perek", id);
+        intent.putExtra("number",num);
         startActivity(intent);
 
     }

@@ -11,6 +11,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.net.URI;
+
 public class PesukimPage extends AppCompatActivity {
 
     private TextView pesukim;
@@ -23,24 +25,27 @@ public class PesukimPage extends AppCompatActivity {
 
         String sefer = intent.getStringExtra("Sefer");
         Integer perek = intent.getIntExtra("Perek",0);
+        Integer number = intent.getIntExtra("number",0);
 
         pesukim = (TextView) findViewById(R.id.pesukim);
 
-        setUpPage(sefer, perek);
+        setUpPage(sefer, perek, number);
 
 
     }
 
-    private void setUpPage(String sefer, final Integer perekid){
+    private void setUpPage(String sefer, final Integer perekid, final Integer num){
         new Thread(new Runnable() {
             @Override
             public void run() {
                 final StringBuilder builder  = new StringBuilder();
                 String perekFinder = "Chapter " + perekid;
+                String tempUri = "https://www.mechon-mamre.org/p/pt/pt0" + num + ".htm";
+                URI machonSefer =  URI.create(tempUri);
 
                 try{
                     Log.d("Pesukim","reached");
-                    Document doc  = Jsoup.connect("https://www.mechon-mamre.org/p/pt/pt01.htm").get();
+                    Document doc  = Jsoup.connect(tempUri).get();
                     Elements perakim = doc.getElementsByTag("H2");
                     for(Element perek: perakim){
                         String current = perek.text();

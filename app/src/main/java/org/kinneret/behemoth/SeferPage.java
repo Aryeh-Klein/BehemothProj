@@ -57,7 +57,7 @@ public class SeferPage extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 buttonBereshit.setBackgroundColor(Color.GREEN);
-                OpenSefer(v, "Bereishit");
+                OpenSefer(v, "Bereishit",1);
 
             }
         });
@@ -67,7 +67,7 @@ public class SeferPage extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 buttonShmot.setBackgroundColor(Color.GREEN);
-                OpenSefer(v, "Shmot");
+                OpenSefer(v, "Shmot",2);
 
             }
         });
@@ -77,7 +77,7 @@ public class SeferPage extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 buttonVayikrah.setBackgroundColor(Color.GREEN);
-                OpenSefer(v, "Vayikrah");
+                OpenSefer(v, "Vayikrah",3);
 
             }
         });
@@ -87,7 +87,7 @@ public class SeferPage extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 buttonBamidbar.setBackgroundColor(Color.GREEN);
-                OpenSefer(v, "Bamidbar");
+                OpenSefer(v, "Bamidbar",4);
 
             }
         });
@@ -97,7 +97,7 @@ public class SeferPage extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 buttonDivarim.setBackgroundColor(Color.GREEN);
-                OpenSefer(v, "Divarim");
+                OpenSefer(v, "Divarim",5);
 
             }
         });
@@ -105,10 +105,11 @@ public class SeferPage extends AppCompatActivity {
     }
 
 
-    private void OpenSefer(View view, String sefer){
+    private void OpenSefer(View view, String sefer, Integer number){
 
         Intent intent = new Intent(this, SeferPerakim.class);
         intent.putExtra("Sefer",sefer);
+        intent.putExtra("Number",number);
         startActivity(intent);
 
     }
