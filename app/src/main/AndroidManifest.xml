@@ -29,8 +29,7 @@
             android:name=".SeferPerakim"
             android:label="@string/title_activity_perakim_page"></activity>
         <activity android:name=".PesukimPage">
-            android:label="@string/title_activity_pesukim_page">
-        </activity>
+            android:label="@string/title_activity_pesukim_page"></activity>
     </application>
 
 </manifest>

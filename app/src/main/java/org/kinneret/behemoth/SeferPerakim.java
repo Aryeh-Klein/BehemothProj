@@ -61,7 +61,7 @@ public class SeferPerakim extends AppCompatActivity {
             myButton.setText("פרק " + converted);
             myButton.setId(i);
             myButton.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
-            final int id_ = myButton.getId();
+            final int id = myButton.getId();
 
             final LinearLayout layout = (LinearLayout) findViewById(R.id.PerakimList);
             layout.addView(myButton);
@@ -69,7 +69,7 @@ public class SeferPerakim extends AppCompatActivity {
             myButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
 
-                    getPesukim(s,n);
+                    getPesukim(s,id);
 
                 }
             });
